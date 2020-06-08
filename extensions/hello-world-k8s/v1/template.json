@@ -30,13 +30,7 @@
 				"description": "Type of the vm to run the extension: master or agent "
 			}
 		},
-		"extensionParameters": {
-			"type": "securestring",
-			"minLength": 0,
-			"metadata": {
-				"description": "Custom Parameter for Extension - for hello-world, this is empty"
-			}
-		},
+		
 		"vmIndex": {
 			"type": "int",
 			"metadata": {
@@ -46,7 +40,7 @@
    },
    "variables": {  
 		"singleQuote": "'",
-		"initScriptUrl": "[concat(parameters('artifactsLocation'), 'extensions/hello-world-k8s/v1/provision.sh')]"
+		"initScriptUrl": "[concat(parameters('artifactsLocation'), 'extensions/hello-world-k8s/v1/hello-world-k8s.sh')]"
    },
    "resources": [  
 	{
@@ -66,7 +60,7 @@
 			 ]
 		},
         "protectedSettings": {
-			"commandToExecute": "[concat('/bin/bash -c \"/bin/bash ./hello-world-k8s.sh ', variables('singleQuote'), parameters('extensionParameters'), variables('singleQuote'), ' >> /var/log/azure/hello-world-provision.log 2>&1 &\" &')]"
+			"commandToExecute": "[concat('/bin/bash -c \"/bin/bash ./hello-world-k8s.sh ', ' >> /var/log/azure/hello-world-provision.log 2>&1 &\" &')]"
         }
       }
     }
