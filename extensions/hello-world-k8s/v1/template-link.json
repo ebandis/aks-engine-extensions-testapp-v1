@@ -7,8 +7,8 @@
         
     ],
     "copy": {
-        "count": 3 ,
-        "name": "helloWorldExtensionLoop"
+        "count": "EXTENSION_LOOP_COUNT",
+        "name": "vmLoopNode"
     },
     "properties": {
         "mode": "Incremental",
