@@ -46,7 +46,7 @@
    },
    "variables": {  
 		"singleQuote": "'",
-		"initScriptUrl": "[concat(parameters('artifactsLocation'), 'extensions/hello-world-k8s/v1/hello-world-k8s.sh')]"
+		"initScriptUrl": "[concat(parameters('artifactsLocation'), 'extensions/hello-world-k8s/v1/provision.sh')]"
    },
    "resources": [  
 	{
