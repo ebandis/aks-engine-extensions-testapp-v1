@@ -15,10 +15,7 @@
             "uri": "https://raw.githubusercontent.com/ebandis/aks-engine-extensions-testapp-v1/master/extensions/hello-world-k8s/v1/template.json",
             "contentVersion": "1.0.0.0"
         },
-        "parameters": {
-            "artifactsLocation": {
-                "value": "https://raw.githubusercontent.com/ebandis/aks-engine-extensions-testapp-v1/master/"
-            },
+        "parameters": {           
             "apiVersionDeployments": {
                 "value": "[variables('apiVersionDeployments')]"
             },
