@@ -1,7 +1,7 @@
 {
     "name": "[concat(EXTENSION_TARGET_VM_NAME_PREFIX, copyIndex(EXTENSION_LOOP_OFFSET), 'PrometheusGrafanaK8s')]",
     "type": "Microsoft.Resources/deployments",
-    "apiVersion": "[variables('apiVersionDeployments')]",
+    "apiVersion": "[parameters('apiVersionDeployments')]",
     "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', EXTENSION_TARGET_VM_NAME_PREFIX, copyIndex(EXTENSION_LOOP_OFFSET), '/extensions/cse', '-EXTENSION_TARGET_VM_TYPE-', copyIndex(EXTENSION_LOOP_OFFSET))]"
     ],
@@ -12,18 +12,18 @@
     "properties": {
         "mode": "Incremental",
         "templateLink": {
-            "uri": "EXTENSION_URL_REPLACEextensions/hello-world-k8s/v1/template.json",
+            "uri": "https://raw.githubusercontent.com/ebandis/aks-engine-extensions-testapp-v1/master/extensions/hello-world-k8s/v1/template.json",
             "contentVersion": "1.0.0.0"
         },
         "parameters": {
             "artifactsLocation": {
-                "value": "EXTENSION_URL_REPLACE"
+                "value": "https://raw.githubusercontent.com/ebandis/aks-engine-extensions-testapp-v1/master/"
             },
             "apiVersionDeployments": {
-                "value": "[variables('apiVersionDeployments')]"
+                "value": "[parameters('apiVersionDeployments')]"
             },
             "targetVMName": {
-                "value": "[concat(EXTENSION_TARGET_VM_NAME_PREFIX, copyIndex(EXTENSION_LOOP_OFFSET))]"
+                "value": "EXTENSION_TARGET_VM_NAME_PREFIX"
             },
             "targetVMType": {
                 "value": "EXTENSION_TARGET_VM_TYPE"
@@ -32,7 +32,7 @@
                 "value": "EXTENSION_PARAMETERS_REPLACE"
             },
             "vmIndex":{
-                "value": "[copyIndex(EXTENSION_LOOP_OFFSET)]"
+                "value": "[copyIndex(EXTENSION_LOOP_OFFSET)]" 
             }
         }
     }
