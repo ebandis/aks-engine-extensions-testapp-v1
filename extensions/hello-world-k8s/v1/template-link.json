@@ -17,20 +17,20 @@
             "contentVersion": "1.0.0.0"
         },
         "parameters": {
-            "artifactsLocation": {
+            "artifactsLocation1": {
                 "value": "https://raw.githubusercontent.com/ebandis/aks-engine-extensions-testapp-v1/master/"
             },
-            "apiVersionDeployments": {
+            "apiVersionDeployments1": {
                 "value": "[variables('apiVersionDeployments')]"
             },
-            "targetVMName": {
+            "targetVMName1": {
                 "value": "[concat(EXTENSION_TARGET_VM_NAME_PREFIX, copyIndex(EXTENSION_LOOP_OFFSET))]"
             },
-            "targetVMType": {
+            "targetVMType1": {
                 "value": "EXTENSION_TARGET_VM_TYPE"
             },
             
-            "vmIndex":{
+            "vmIndex1":{
                 "value": "[copyIndex(EXTENSION_LOOP_OFFSET)]"
             }
         }
