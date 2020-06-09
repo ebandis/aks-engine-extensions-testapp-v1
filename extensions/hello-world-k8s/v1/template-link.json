@@ -29,6 +29,7 @@
             "vmIndex":{
                 "value": "[copyIndex(EXTENSION_LOOP_OFFSET)]" 
             }
+            ,"elidas":{"value": "test"}
         }
     }
 }
