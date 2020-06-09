@@ -7,28 +7,32 @@
 			"minLength": 1,
 			"metadata": {
 				"description": "Artifacts Location - URL"
-			}
+			},
+			"defaultValue": "https://raw.githubusercontent.com/ebandis/aks-engine-extensions-testapp-v1/master/"
         },
 		"apiVersionDeployments": {
 			"type": "string",
 			"minLength": 1,
 			"metadata": {
 				"description": "Compute API Version"
-			}
+			},
+			"defaultValue": "2018-06-01"
 		},
 		"targetVMName":{
 			"type": "string",
 			"minLength": 1,
 			"metadata": {
 				"description": "Name of the vm to run the "
-			}
+			},
+			"defaultValue": "'[concat(EXTENSION_TARGET_VM_NAME_PREFIX, copyIndex(EXTENSION_LOOP_OFFSET))]'"
 		},
 		"targetVMType":{
 			"type": "string",
 			"minLength": 1,
 			"metadata": {
 				"description": "Type of the vm to run the extension: master or agent "
-			}
+			},
+			"defaultValue": "master"
 		},
 		"extensionParameters": {
 			"type": "securestring",
@@ -36,12 +40,14 @@
 			"metadata": {
 				"description": "Custom Parameter for Extension - for hello-world-k8s, this is empty"
 			}
+			
 		},
 		"vmIndex": {
 			"type": "int",
 			"metadata": {
 				"description": "index in the pool of the current agent, used so that we can get the extension name right"
-			}
+			},
+			"defaultValue": 3
 		}
    },
    "variables": {  
