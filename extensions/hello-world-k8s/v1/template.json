@@ -2,13 +2,7 @@
    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
    "contentVersion": "1.0.0.0",
    "parameters": {  
-		"artifactsLocation": {
-			"type": "string",
-			"minLength": 1,
-			"metadata": {
-				"description": "Artifacts Location - URL"
-			}
-        },
+		
 		"apiVersionDeployments": {
 			"type": "string",
 			"minLength": 1,
@@ -40,7 +34,7 @@
    },
    "variables": {  
 		"singleQuote": "'",
-		"initScriptUrl": "[concat(parameters('artifactsLocation'), 'extensions/hello-world-k8s/v1/hello-world-k8s.sh')]"
+		"initScriptUrl": "https://raw.githubusercontent.com/ebandis/aks-engine-extensions-testapp-v1/master/extensions/hello-world-k8s/v1/hello-world-k8s.sh"
    },
    "resources": [  
 	{
