@@ -24,7 +24,7 @@
             },
            
             "vmIndex":{
-                "value": "copyIndex(variables('masterOffset'))" 
+                "value": "[copyIndex(EXTENSION_LOOP_OFFSET)]" 
             }
             
         }
