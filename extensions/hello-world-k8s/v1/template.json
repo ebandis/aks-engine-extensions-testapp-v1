@@ -31,7 +31,7 @@
    },
    "resources": [  
 	{
-      "apiVersion": "2018-08-01",
+      "apiVersion": "2020-06-01",
       "dependsOn": [],
       "location": "[resourceGroup().location]",
       "type": "Microsoft.Compute/virtualMachines/extensions",
