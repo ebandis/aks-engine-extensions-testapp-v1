@@ -1,5 +1,5 @@
 {
-   "$schema": "http://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
    "contentVersion": "1.0.0.0",
    "parameters": {  
 		"artifactsLocation": {
@@ -30,7 +30,13 @@
 				"description": "Type of the vm to run the extension: master or agent "
 			}
 		},
-		
+		"extensionParameters": {
+			"type": "securestring",
+			"minLength": 0,
+			"metadata": {
+				"description": "Custom Parameter for Extension - for hello-world-k8s, this is empty"
+			}
+		},
 		"vmIndex": {
 			"type": "int",
 			"metadata": {
@@ -48,7 +54,7 @@
       "dependsOn": [],
       "location": "[resourceGroup().location]",
       "type": "Microsoft.Compute/virtualMachines/extensions",
-	  "name": "[concat(parameters('targetVMName'),'/cse', '-', parameters('targetVMType'), '-', parameters('vmIndex'))]", 
+	  "name": "[concat(parameters('targetVMName'),'/cse', '-', parameters('targetVMType'), '-', parameters('vmIndex'))]",
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
         "type": "CustomScript",
@@ -60,7 +66,7 @@
 			 ]
 		},
         "protectedSettings": {
-			"commandToExecute": "[concat('/bin/bash -c \"/bin/bash ./hello-world-k8s.sh ', ' >> /var/log/azure/hello-world-provision.log 2>&1 &\" &')]"
+			"commandToExecute": "[concat('/bin/bash -c \"/bin/bash ./hello-world-k8s.sh ', variables('singleQuote'), parameters('extensionParameters'), variables('singleQuote'), ' >> /var/log/azure/hello-world-k8s.log 2>&1 &\" &')]"
         }
       }
     }
