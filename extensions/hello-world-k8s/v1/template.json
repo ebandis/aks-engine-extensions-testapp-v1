@@ -37,7 +37,7 @@
    },
    "resources": [  
 	{
-      "apiVersion": "[parameters('apiVersionDeployments')]",
+      "apiVersion": "2018-06-01",
       "dependsOn": [],
       "location": "[resourceGroup().location]",
       "type": "Microsoft.Compute/virtualMachines/extensions",
