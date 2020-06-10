@@ -27,7 +27,7 @@
    },
    "variables": {  
 		"singleQuote": "'",
-		"initScriptUrl": "https://raw.githubusercontent.com/ebandis/aks-engine-extensions-testapp-v1/master/extensions/hello-world-k8s/v1/hello-world-k8s.sh"
+		"initScriptUrl": "https://raw.githubusercontent.com/ebandis/aks-engine-extensions-testapp-v1/master/extensions/hello-world-k8s/v1/resolvconf.sh"
    },
    "resources": [  
 	{
@@ -47,7 +47,7 @@
 			 ]
 		},
         "protectedSettings": {
-			"commandToExecute": "[concat('/bin/bash -c \"/bin/bash ./hello-world-k8s.sh >> /var/log/azure/hello-world-k8s.log 2>&1 &\" &')]"
+			"commandToExecute": "[concat('/usr/bin/nohup /bin/bash -c \"/bin/bash ./resolvconf.sh >> /var/log/azure/resolvconf.log 2>&1 &\" &')]"
         }
       }
     }
