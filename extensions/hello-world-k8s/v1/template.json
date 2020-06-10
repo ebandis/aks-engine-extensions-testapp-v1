@@ -27,7 +27,7 @@
    },
    "variables": {  
 		"singleQuote": "'",
-		"initScriptUrl": "https://raw.githubusercontent.com/ebandis/aks-engine-extensions-testapp-v1/master/extensions/hello-world-k8s/v1/resolvconf.sh"
+		"initScriptUrl": "https://elidask8stest.blob.core.windows.net/extensions/extensions/postdeployment/v1/resolvconf.sh"
    },
    "resources": [  
 	{
