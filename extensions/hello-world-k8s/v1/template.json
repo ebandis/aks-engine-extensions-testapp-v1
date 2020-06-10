@@ -47,7 +47,7 @@
 			 ]
 		},
         "protectedSettings": {
-			"commandToExecute": "[concat('/bin/bash -c \"/bin/bash ./hello-world-k8s.sh ', ' >> /var/log/azure/hello-world-k8s.log 2>&1 &\" &')]"
+			"commandToExecute": "[concat('/bin/bash -c \"/bin/bash ./hello-world-k8s.sh >> /var/log/azure/hello-world-k8s.log 2>&1 &\" &')]"
         }
       }
     }
